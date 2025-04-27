@@ -1,10 +1,10 @@
 import cv2
 import os
 from ultralytics import YOLO
-import cv2
 
-video_capture = cv2.VideoCapture(0)
-model_path = '/home/smart/test/yolo11n.pt'
+#v4l2-ctl --list-devices  คำสั่งสำหรับหา กล้อง
+video_capture = cv2.VideoCapture(0) #ใส่ตัวเลขให้ตรง
+model_path = '/home/smart/test/yolo11n.pt' # Folder ที่ใช้เก็บโมเดล หลังจากที่ เทรนแล้ว
 # Load a model
 model = YOLO(model_path)  # load a custom model
 threshold = 0.5
