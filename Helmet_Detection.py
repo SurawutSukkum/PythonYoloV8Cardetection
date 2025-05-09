@@ -4,7 +4,7 @@ from ultralytics import YOLO
 
 #v4l2-ctl --list-devices  คำสั่งสำหรับหา กล้อง
 video_capture = cv2.VideoCapture(0) #ใส่ตัวเลขให้ตรง
-model_path = '/home/smart/test/last1.pt' # Folder ที่ใช้เก็บโมเดล หลังจากที่ เทรนแล้ว
+model_path = '/home/smart/test/best.pt' # Folder ที่ใช้เก็บโมเดล หลังจากที่ เทรนแล้ว
 # Load a model
 model = YOLO(model_path)  # load a custom model
 threshold = 0.5
