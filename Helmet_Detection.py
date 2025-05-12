@@ -21,8 +21,12 @@ while True:
         print(result)
         x1, y1, x2, y2, score, class_id = result
         if score > threshold:
-         cv2.rectangle(video_frame, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 5)
-         cv2.putText(video_frame, class_name_dict[int(class_id)].upper(), (int(x1), int(y1 - 10)),cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 3, cv2.LINE_AA)
+         if  class_id == 0:
+           cv2.rectangle(video_frame, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 5)
+           cv2.putText(video_frame, "Please wear Helmet", (int(x1), int(y1 - 40)),cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 3, cv2.LINE_AA)
+         if  class_id == 1:
+           cv2.rectangle(video_frame, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 5)
+           cv2.putText(video_frame, class_name_dict[int(class_id)].upper(), (int(x1), int(y1 - 10)),cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 3, cv2.LINE_AA)
 
     cv2.namedWindow('detectLabel', cv2.WINDOW_NORMAL)
     cv2.imshow("detectLabel", video_frame )
